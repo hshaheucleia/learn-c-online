@@ -28,9 +28,10 @@ def submit():
   except:
     return jsonify({'error': 'invalid code expression'})
 
-if __name__ == '__main__':
-  app.run(debug=True)
-
 @app.route('/test')
 def test():
     return render_template("test.html")
+
+if __name__ == '__main__':
+  app.run(debug=True)
+
