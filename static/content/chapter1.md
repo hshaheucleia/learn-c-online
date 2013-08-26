@@ -26,9 +26,9 @@ Paragraphs are separated by a blank line.
 2nd paragraph. *Italic*, **bold**, ~~strikethrough~~, `monospace`. Itemized lists
 look like:
 
-  * this one
-  * that one
-  * the other one
+  * this one
+  * that one
+  * the other one
 
 Here's a numbered list:
 
@@ -40,23 +40,23 @@ Here's a numbered list:
 
 This is an H3, and below is some code.
 
-    class myTest extends yourText {
-        public function __construct() {
-            // o hai
-        }
-        
-        public function doSomething($rawr = []) {
-            foreach ($rawr as $rar) {
-                echo $rar;
-            }
-        }
-    }
-    
+    class myTest extends yourText {
+      public function __construct() {
+        // o hai
+      }
+
+      public function doSomething($rawr = []) {
+        foreach ($rawr as $rar) {
+          echo $rar;
+        }
+      }
+    }
+
 Code can be defined just by tabbing in on every code line, or by separating it with backticks.
 
 ```
 def hello_world(x)
-    puts "Hello, #{x}"
+    puts "Hello, #{x}"
 end
 ```
 
@@ -64,7 +64,7 @@ or you can specify a specific class for some syntax highlighting.
 
 ```ruby
 def hello_world(x)
-    puts "Hello, #{x}"
+    puts "Hello, #{x}"
 end
 ```
 
@@ -73,7 +73,7 @@ end
 
 heres some tables.
 
-First Header  | Second Header
+First Header  | Second Header
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+Content Cell  | Content Cell
+Content Cell  | Content Cell

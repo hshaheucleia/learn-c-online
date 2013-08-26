@@ -1,6 +1,6 @@
 //var fakeDelay = function(callback) { setTimeout(callback, 2000); };
 
-var converter = new Showdown.converter();
+var converter = new Showdown.converter({ extensions: ['twitter', 'table', 'prettify', 'github'] });
 
 $('#result').hide();
 
