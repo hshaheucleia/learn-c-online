@@ -1,6 +1,10 @@
 //var fakeDelay = function(callback) { setTimeout(callback, 2000); };
 
-var converter = new Showdown.converter({ extensions: ['twitter', 'table', 'prettify', 'github'] });
+var converter = new Showdown.converter({
+  'github_flavouring': true,
+  'tables': true,
+  extensions: ['twitter', 'table', 'prettify', 'github']
+});
 
 $('#result').hide();
 
@@ -102,7 +106,7 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
 $('#try-button').click(function() {     
   $('#result').button('loading');                                        
   $('#result').slideDown();
-                                                                              
+
   $.ajax({
         type: "POST",
         url: "http://powerful-eyrie-7882.herokuapp.com/api/code/submit",
