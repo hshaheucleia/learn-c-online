@@ -2,6 +2,8 @@
 
 var converter = new Showdown.converter();
 
+$('#result').hide();
+
 var loadPage = function(file) {
   $('#page-content').empty();
   $('#page-content').addClass('loading');
@@ -59,4 +61,11 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
       cm.replaceSelection(spaces, "end", "+input");
     }
   }
+});
+
+$('#try-button').click(function() {
+
+  $('#result').slideDown();
+
+  $('#result').text('For Ben to fill in.'); // TODO: Ben
 });
