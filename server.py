@@ -5,8 +5,12 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/", methods=["PUT", "POST"])
-def evaluate():
+@app.route("/")
+def index():
+    return "Index Page"
+
+@app.route("/api/code/submit", methods=["PUT", "POST"])
+def submit():
   try:
     # Attempt to evaluate the expression.
     return jsonify({'result': str(request.json['code'])})
