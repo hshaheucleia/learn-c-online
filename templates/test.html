@@ -47,8 +47,7 @@ int main() {
                 // Evaluate the result.
                 eval(data['result']);
                 // Run the respective program
-                Program.run();
-                alert("Finished");
+                alert(Program({}).run().stdout);
             },
             failure: function(errMsg) {
             alert(errMsg);
