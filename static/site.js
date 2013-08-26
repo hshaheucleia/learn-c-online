@@ -70,8 +70,9 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
   }                                                                             
 });                                                                             
                                                                                 
-$('#try-button').click(function() {     
-  $('#result').button('loading');                                        
+$('#try-button').click(function() { 
+  var $btn = $(this);    
+  $btn.button('loading');                                        
   $('#result').slideDown();
 
   $.ajax({
@@ -86,7 +87,7 @@ $('#try-button').click(function() {
         eval(data['result']);
         // Run the respective program
         $('#result').text(Program({}).run().stdout);
-        $('#result').button('reset');  
+        $btn.button('reset');  
     },
 
     failure: function(errMsg) {

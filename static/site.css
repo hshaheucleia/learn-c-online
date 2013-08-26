@@ -62,3 +62,9 @@ body {
   -moz-border-radius: 8px;
   border-radius: 8px;
 }
+
+.donate {
+  height: 48px;
+  overflow: hidden;
+  padding-top: 8px;
+}
