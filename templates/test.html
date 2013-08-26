@@ -27,6 +27,8 @@ int main() {
 </textarea></form>
 
 <button onclick="submit_code()">Compile Code</button>
+<div id="result">
+</div>
 
     <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
@@ -44,11 +46,10 @@ int main() {
             contentType: "application/json",
             dataType: "json",
             success: function(data) {
-                // Evaluate the result.
-                alert(data['result']);
+                // Evaluate.
                 eval(data['result']);
                 // Run the respective program
-                alert(Program({}).run().stdout);
+                $('#result').text(Program({}).run().stdout);
             },
             failure: function(errMsg) {
             alert(errMsg);
