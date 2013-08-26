@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
     <script>
       var converter = new Showdown.converter();
 
-      $.get('/content/chapter1.md', function(data) {
+      $.get('/static/content/chapter1.md', function(data) {
         var htmlContent = converter.makeHtml(data);
 
         $('#page-content').html(htmlContent);
