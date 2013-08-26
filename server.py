@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import json
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Index Page"
+    return render_template("index.html")
 
 @app.route("/api/code/submit", methods=["PUT", "POST"])
 def submit():
