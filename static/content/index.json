@@ -1,0 +1,20 @@
+{
+  "chapters": [
+    {
+      "title": "Chapter 1",
+      "file": "chapter1.md"
+    },
+    {
+      "title": "Chapter 2",
+      "file": "chapter2.md"
+    },
+    {
+      "title": "Chapter 3",
+      "file": "chapter1.md"
+    },
+    {
+      "title": "Chapter 4",
+      "file": "chapter1.md"
+    }
+  ]
+}

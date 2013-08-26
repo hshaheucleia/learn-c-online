@@ -12,8 +12,8 @@
 
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/static/codemirror/codemirror.css" rel="stylesheet">
     <link href="/static/site.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -55,7 +55,8 @@
         </div>
 
         <div class="col-md-6">
-          <pre>
+
+<textarea id="code-editor">
 #include &lt;stdio.h&gt;
 
 int main(int argc, char *argv[]) {
@@ -63,7 +64,9 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
-          </pre>
+
+</textarea>
+
         </div>
       </div>
 
@@ -73,6 +76,8 @@ int main(int argc, char *argv[]) {
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     <script src="/static/showdown/showdown.js"></script>
     <script src="/static/showdown/extensions/twitter.js"></script>
+    <script src="/static/codemirror/codemirror.js"></script>
+    <script src="/static/codemirror/clike/clike.js"></script>
     <script src="/static/site.js"></script>
   </body>
 </html>
