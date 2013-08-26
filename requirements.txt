@@ -6,4 +6,5 @@ argparse==1.2.1
 distribute==0.6.34
 gunicorn==17.5
 itsdangerous==0.23
+mechanize==0.2.5
 wsgiref==0.1.2
