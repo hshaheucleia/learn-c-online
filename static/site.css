@@ -3,6 +3,13 @@ body {
   background: url('/static/geometry.png');
 }
 
+.footer {
+	background-color: #222;
+	height: 240px;
+	color: #aaa;
+	padding: 20px;
+}
+
 .container.site-main {
   background-color: white;
   border: 8px solid white;
