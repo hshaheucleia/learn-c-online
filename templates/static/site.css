@@ -1,0 +1,14 @@
+body {
+  padding-top: 50px;
+  background: url('/static/geometry.png');
+}
+
+.container.site-main {
+  background-color: white;
+  border: 8px solid white;
+}
+
+.lead-container {
+  padding: 40px 15px;
+  text-align: center;
+}
