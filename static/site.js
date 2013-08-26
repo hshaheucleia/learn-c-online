@@ -99,9 +99,10 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
   }                                                                             
 });                                                                             
                                                                                 
-$('#try-button').click(function() {                                             
-  $('#result').slideDown();                                                     
-  // Call the ajax code required.                                                                              
+$('#try-button').click(function() {     
+  $('#result').button('loading');                                        
+  $('#result').slideDown();
+                                                                              
   $.ajax({
         type: "POST",
         url: "http://powerful-eyrie-7882.herokuapp.com/api/code/submit",
@@ -114,11 +115,10 @@ $('#try-button').click(function() {
             eval(data['result']);
             // Run the respective program
             $('#result').text(Program({}).run().stdout);
+            $('#result').button('reset');  
         },
         failure: function(errMsg) {
-        alert(errMsg);
+          alert(errMsg);
         }
   });
-  // Get the result.
-  $('#result').button('reset');
 });
