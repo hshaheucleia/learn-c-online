@@ -64,8 +64,11 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
 });
 
 $('#try-button').click(function() {
+  $('#result').button('loading');
 
   $('#result').slideDown();
 
   $('#result').text('For Ben to fill in.'); // TODO: Ben
+
+  $('#result').button('reset');
 });
