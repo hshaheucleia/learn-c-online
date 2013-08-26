@@ -36,7 +36,7 @@ $.getJSON('/static/content/index.json', function(data) {
       toLoad = chapters[i].file;
     }
   }
-  
+
   $('.chapter-menu-item').on('click', function() {
     var file = $(this).find('a').attr('href').substr(1);
     document.location.hash = '#' + file;
@@ -48,5 +48,15 @@ $.getJSON('/static/content/index.json', function(data) {
 });
 
 var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
-  mode: "text/x-csrc"
+  mode: "text/x-csrc",
+  indentUnit: 3,
+  smartIndent: true,
+  indentWithTabs: false,
+  tabSize: 3,
+  extraKeys: {
+    Tab: function(cm) {
+      var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+      cm.replaceSelection(spaces, "end", "+input");
+    }
+  }
 });
