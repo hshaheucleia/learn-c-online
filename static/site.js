@@ -6,7 +6,7 @@ var loadPage = function(file) {
   $('#page-content').empty();
   $('#page-content').addClass('loading');
 
-  $.get('/static/content/' + file, function(data) {
+  $.get('/static/content/' + file + '.md', function(data) {
     var htmlContent = converter.makeHtml(data);
     $('#page-content').removeClass('loading');
     $('#page-content').hide();
@@ -19,9 +19,11 @@ $.getJSON('/static/content/index.json', function(data) {
   var files = [];
   var chapters = data.chapters;
 
+
+  var toLoad = data.chapters[0].file;
+
   var len = chapters.length;
   for (var i = 0; i !== len; ++i) {
-    console.log(chapters[i]);
     $('#chapters-menu').append(
       $('<li>').append(
         $('<a>')
@@ -29,15 +31,20 @@ $.getJSON('/static/content/index.json', function(data) {
           .attr('href', '#' + chapters[i].file)
       ).addClass('chapter-menu-item')
     );
-  }
 
+    if ('#' + chapters[i].file === document.location.hash) {
+      toLoad = chapters[i].file;
+    }
+  }
+  
   $('.chapter-menu-item').on('click', function() {
     var file = $(this).find('a').attr('href').substr(1);
+    document.location.hash = '#' + file;
     loadPage(file);
     return false;
   });
 
-  loadPage('chapter1.md');
+  loadPage(toLoad);
 });
 
 var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
