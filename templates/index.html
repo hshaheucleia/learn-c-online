@@ -73,35 +73,6 @@ int main(int argc, char *argv[]) {
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     <script src="/static/showdown/showdown.js"></script>
     <script src="/static/showdown/extensions/twitter.js"></script>
-
-    <script>
-      var converter = new Showdown.converter();
-
-      var loadPage = function(file) {
-        $.get('/static/content/' + file, function(data) {
-          var htmlContent = converter.makeHtml(data);
-          $('#page-content').html(htmlContent);
-        });
-      };
-      
-      $.getJSON('/static/content/index.json', function(data) {
-        var files = [];
-        var chapters = data.chapters;
-
-        var len = chapters.length;
-        for (var i = 0; i !== len; ++i) {
-          console.log(chapters[i]);
-          $('#chapters-menu').append(
-            $('<li>').append(
-              $('<a>')
-                .text(chapters[i].title)
-                .attr('href', '#' + chapters[i].file)
-            )
-          );
-        }
-
-        loadPage('chapter1.md');
-      });
-    </script>
+    <script src="/static/site.js"></script>
   </body>
 </html>
