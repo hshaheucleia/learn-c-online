@@ -45,6 +45,7 @@ int main() {
             dataType: "json",
             success: function(data) {
                 // Evaluate the result.
+                alert(data['result']);
                 eval(data['result']);
                 // Run the respective program
                 alert(Program({}).run().stdout);
