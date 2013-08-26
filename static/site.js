@@ -64,9 +64,11 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
 });
 
 $('#try-button').click(function() {
+  $('#result').button('loading');
 
   $('#result').slideDown();
 
+<<<<<<< HEAD
                                                                
     if ('#' + chapters[i].file === document.location.hash) {                    
       toLoad = chapters[i].file;                                                
@@ -98,25 +100,25 @@ var editor = CodeMirror.fromTextArea($('#code-editor')[0], {
 });                                                                             
                                                                                 
 $('#try-button').click(function() {                                             
-                                                                                
   $('#result').slideDown();                                                     
-                                                                                
+  // Call the ajax code required.                                                                              
   $.ajax({
-            type: "POST",
-            url: "http://powerful-eyrie-7882.herokuapp.com/api/code/submit",
-            // The key needs to match your method's input parameter (case-sensitive).
-            data: JSON.stringify({code: editor.getValue() }),
-            contentType: "application/json",
-            dataType: "json",
-            success: function(data) {
-                // Evaluate.
-                eval(data['result']);
-                // Run the respective program
-                $('#result').text(Program({}).run().stdout);
-            },
-            failure: function(errMsg) {
-            alert(errMsg);
-  }});
-
-  
+        type: "POST",
+        url: "http://powerful-eyrie-7882.herokuapp.com/api/code/submit",
+        // The key needs to match your method's input parameter (case-sensitive).
+        data: JSON.stringify({code: editor.getValue() }),
+        contentType: "application/json",
+        dataType: "json",
+        success: function(data) {
+            // Evaluate.
+            eval(data['result']);
+            // Run the respective program
+            $('#result').text(Program({}).run().stdout);
+        },
+        failure: function(errMsg) {
+        alert(errMsg);
+        }
+  });
+  // Get the result.
+  $('#result').button('reset');
 });
